@@ -164,25 +164,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="pages/gallery.html" class="nav-link">
-                            <i class="nav-icon fas fa-user-graduate"></i>
-                            <p>
-                                Студенты
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Группы
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
-                            <i class="nav-icon fas fa-chalkboard-teacher"></i>
-                            <p>
-                                Преподаватели
                             </p>
                         </a>
                     </li>
@@ -195,7 +179,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
+                        <a href="{{route('user.index')}}" class="nav-link">
                             <i class="nav-icon far fa-user"></i>
                             <p>
                                 Пользователи

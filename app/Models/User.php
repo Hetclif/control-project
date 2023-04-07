@@ -12,16 +12,36 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    const GENDER_MALE = 1;
+    const GENDER_FEMALE = 2;
+
+    const ROLE_STUDENT = 1;
+    const ROLE_TEACHER = 2;
+
+    protected $table = 'users';
+    protected $guarded = false;
+
+    static function getGenders(){
+        return [
+            self::GENDER_MALE => 'Мужской',
+            self::GENDER_FEMALE => 'Женский',
+        ];
+    }
+
+    public function getGenderTitleAttribute(){
+        return self::getGenders()[$this->gender];
+    }
+
+    static function getRoles(){
+        return [
+            self::ROLE_STUDENT => 'Студент',
+            self::ROLE_TEACHER => 'Преподаватель',
+        ];
+    }
+
+    public function getRoleTitleAttribute(){
+        return self::getRoles()[$this->role];
+    }
 
     /**
      * The attributes that should be hidden for serialization.
