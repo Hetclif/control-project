@@ -11,14 +11,8 @@ class ShowController extends Controller
 {
     public function __invoke(Group $group)
     {
-        $users = User::all();
-        $needUser = '';
+        $user = User::find($group->head_id);
 
-        foreach ($users as $user){
-            if($user->id == $group->head_id)
-                $needUser = $user;
-        }
-
-        return view('group.show', compact('group', 'needUser'));
+        return view('group.show', compact('group', 'user'));
     }
 }

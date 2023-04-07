@@ -54,7 +54,7 @@
                                 </tr>
                                 <tr>
                                     <td>Староста</td>
-                                    <td>{{$needUser->last_name}}</td>
+                                    <td>{{$user->last_name .' '. $user->first_name}}</td>
                                 </tr>
 
                                 </tbody>

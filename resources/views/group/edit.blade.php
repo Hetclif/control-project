@@ -43,7 +43,8 @@
                         <select name="head_id" class="users" style="width: 100%;">
                             <option selected="selected" disabled>Староста</option>
                             @foreach($users as $user)
-                                <option {{$user->id == $group->id ? 'selected' : ''}} value="{{$user->id}}">{{$user->last_name}}</option>
+                                <option {{$user->id == $group->head_id ? 'selected' : ''}} value="{{$user->id}}">
+                                    {{$user->last_name .' '.$user->first_name}}</option>
                             @endforeach
                         </select>
                     </div>
