@@ -58,7 +58,7 @@
                         <select name="role" class="custom-select form-control" id="exampleSelectBorder">
                             <option disabled selected>Роль</option>
                             <option {{$user->role == 1 || old('role') == 1 ? 'selected' : ''}} value="1">Студент</option>
-                            <option {{$user->role == 1 || old('role') == 2 ? 'selected' : ''}} value="2">Преподаватель</option>
+                            <option {{$user->role == 2 || old('role') == 2 ? 'selected' : ''}} value="2">Преподаватель</option>
                         </select>
                     </div>
 
