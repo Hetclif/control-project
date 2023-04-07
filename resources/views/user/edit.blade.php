@@ -55,10 +55,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <select name="role" class="custom-select form-control" id="exampleSelectBorder">
-                            <option disabled selected>Роль</option>
-                            <option {{$user->role == 1 || old('role') == 1 ? 'selected' : ''}} value="1">Студент</option>
-                            <option {{$user->role == 2 || old('role') == 2 ? 'selected' : ''}} value="2">Преподаватель</option>
+                        <select name="group_id" class="users" style="width: 100%;">
+                            <option selected="selected" disabled>Группа</option>
+                            @foreach($groups as $group)
+                                <option {{$group->id == $user->group_id ? 'selected' : ''}} value="{{$group->id}}">
+                                    {{$group->name}}</option>
+                            @endforeach
                         </select>
                     </div>
 

@@ -40,7 +40,6 @@
                                     <th>Имя</th>
                                     <th>Отчество</th>
                                     <th>Пол</th>
-                                    <th>Роль</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -53,7 +52,6 @@
                                         <td>{{$user->first_name}}</td>
                                         <td>{{$user->patronymic}}</td>
                                         <td>{{$user->genderTitle}}</td>
-                                        <td>{{$user->roleTitle}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

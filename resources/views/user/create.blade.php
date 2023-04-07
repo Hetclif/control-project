@@ -55,10 +55,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <select name="role" class="custom-select form-control" id="exampleSelectBorder">
-                            <option disabled selected>Роль</option>
-                            <option {{old('role') == 1 ? 'selected' : ''}} value="1">Студент</option>
-                            <option {{old('role') == 2 ? 'selected' : ''}} value="2">Преподаватель</option>
+                        <select name="group_id" class="custom-select form-control" id="exampleSelectBorder">
+                            <option disabled selected>Группа</option>
+                            @foreach($groups as $group)
+                                <option value="{{$group->id}}">{{$group->name}}</option>
+                            @endforeach
                         </select>
                     </div>
 

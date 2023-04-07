@@ -27,7 +27,7 @@
                     @csrf
                     @method('patch')
                     <div class="form-group">
-                        <input type="text" name="number" value="{{$group->name}}" class="form-control" placeholder="Название группы">
+                        <input type="text" name="name" value="{{$group->name}}" class="form-control" placeholder="Название группы">
                     </div>
                     <div class="form-group">
                         <select name="year" class="custom-select form-control" id="exampleSelectBorder">
@@ -49,16 +49,11 @@
                         </select>
                     </div>
 
-
-
-
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Редактировать">
                     </div>
                 </form>
             </div>
-
-
 
             <!-- /.row -->
         </div><!-- /.container-fluid -->

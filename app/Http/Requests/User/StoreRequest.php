@@ -29,7 +29,7 @@ class StoreRequest extends FormRequest
             'first_name' => 'nullable|string',
             'patronymic' => 'nullable|string',
             'gender' => 'nullable|integer',
-            'role' => 'required|integer',
+            'group_id' => 'nullable',
         ];
     }
 }

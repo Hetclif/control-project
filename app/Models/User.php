@@ -15,9 +15,6 @@ class User extends Authenticatable
     const GENDER_MALE = 1;
     const GENDER_FEMALE = 2;
 
-    const ROLE_STUDENT = 1;
-    const ROLE_TEACHER = 2;
-
     protected $table = 'users';
     protected $guarded = false;
 
@@ -30,17 +27,6 @@ class User extends Authenticatable
 
     public function getGenderTitleAttribute(){
         return self::getGenders()[$this->gender];
-    }
-
-    static function getRoles(){
-        return [
-            self::ROLE_STUDENT => 'Студент',
-            self::ROLE_TEACHER => 'Преподаватель',
-        ];
-    }
-
-    public function getRoleTitleAttribute(){
-        return self::getRoles()[$this->role];
     }
 
     /**

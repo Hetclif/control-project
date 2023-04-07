@@ -73,8 +73,8 @@
                                         <td>{{$user->genderTitle}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Роль</td>
-                                        <td>{{$user->roleTitle}}</td>
+                                        <td>Группа</td>
+                                        <td>{{$group->name}}</td>
                                     </tr>
 
                                 </tbody>
