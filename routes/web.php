@@ -24,3 +24,13 @@ Route::group(['prefix' => 'lessons'], function (){
     Route::patch('/{lesson}',\App\Http\Controllers\Lesson\UpdateController::class)->name('lesson.update');
     Route::delete('/{lesson}',\App\Http\Controllers\Lesson\DeleteController::class)->name('lesson.delete');
 });
+
+Route::group(['prefix' => 'classroom'], function (){
+    Route::get('/',\App\Http\Controllers\Classroom\IndexController::class)->name('classroom.index');
+    Route::get('/create',\App\Http\Controllers\Classroom\CreateController::class)->name('classroom.create');
+    Route::post('/',\App\Http\Controllers\Classroom\StoreController::class)->name('classroom.store');
+    Route::get('/{classroom}/edit',\App\Http\Controllers\Classroom\EditController::class)->name('classroom.edit');
+    Route::get('/{classroom}',\App\Http\Controllers\Classroom\ShowController::class)->name('classroom.show');
+    Route::patch('/{classroom}',\App\Http\Controllers\Classroom\UpdateController::class)->name('classroom.update');
+    Route::delete('/{classroom}',\App\Http\Controllers\Classroom\DeleteController::class)->name('classroom.delete');
+});
