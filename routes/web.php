@@ -54,3 +54,13 @@ Route::group(['prefix' => 'group'], function (){
     Route::patch('/{group}',\App\Http\Controllers\Group\UpdateController::class)->name('group.update');
     Route::delete('/{group}',\App\Http\Controllers\Group\DeleteController::class)->name('group.delete');
 });
+
+Route::group(['prefix' => 'timetable'], function (){
+    Route::get('/',\App\Http\Controllers\Timetable\IndexController::class)->name('timetable.index');
+    Route::get('/create',\App\Http\Controllers\Timetable\CreateController::class)->name('timetable.create');
+    Route::post('/',\App\Http\Controllers\Timetable\StoreController::class)->name('timetable.store');
+    Route::get('/{timetable}/edit',\App\Http\Controllers\Timetable\EditController::class)->name('timetable.edit');
+    Route::get('/{timetable}',\App\Http\Controllers\Timetable\ShowController::class)->name('timetable.show');
+    Route::patch('/{timetable}',\App\Http\Controllers\Timetable\UpdateController::class)->name('timetable.update');
+    Route::delete('/{timetable}',\App\Http\Controllers\Timetable\DeleteController::class)->name('timetable.delete');
+});

@@ -55,7 +55,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <select name="group_id" class="custom-select form-control" id="exampleSelectBorder">
+                        <select name="group_id" class="users" style="width: 100%;">
                             <option disabled selected>Группа</option>
                             @foreach($groups as $group)
                                 <option value="{{$group->id}}">{{$group->name}}</option>
