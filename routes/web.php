@@ -74,3 +74,14 @@ Route::group(['prefix' => 'task'], function (){
     Route::patch('/{task}',\App\Http\Controllers\Task\UpdateController::class)->name('task.update');
     Route::delete('/{task}',\App\Http\Controllers\Task\DeleteController::class)->name('task.delete');
 });
+
+Route::group(['prefix' => 'attendance'], function (){
+    Route::get('/',\App\Http\Controllers\Attendance\IndexController::class)->name('attendance.index');
+    Route::get('/create',\App\Http\Controllers\Attendance\CreateController::class)->name('attendance.create');
+    Route::get('/create/{group}',\App\Http\Controllers\Attendance\CreateGroupController::class)->name('attendance_group.create');
+    Route::post('/',\App\Http\Controllers\Attendance\StoreController::class)->name('attendance.store');
+    Route::get('/{attendance}/edit',\App\Http\Controllers\Attendance\EditController::class)->name('attendance.edit');
+    Route::get('/{attendance}',\App\Http\Controllers\Attendance\ShowController::class)->name('attendance.show');
+    Route::patch('/{attendance}',\App\Http\Controllers\Attendance\UpdateController::class)->name('attendance.update');
+    Route::delete('/{attendance}',\App\Http\Controllers\Attendance\DeleteController::class)->name('attendance.delete');
+});
