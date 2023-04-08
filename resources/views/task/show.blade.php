@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Настройки пары</h1>
+                    <h1 class="m-0">Настройки задачи</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -27,9 +27,9 @@
                     <div class="card">
                         <div class="card-header d-flex p-3">
                             <div class="mr-3">
-                                <a href="{{route('timetable.edit', $timetable->id)}}" class="btn btn-primary">Редактировать</a>
+                                <a href="{{route('task.edit', $task->id)}}" class="btn btn-primary">Редактировать</a>
                             </div>
-                            <form action="{{route('timetable.delete', $timetable->id)}}" method="post">
+                            <form action="{{route('task.delete', $task->id)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" class="btn btn-danger" value="Удалить">
@@ -42,35 +42,23 @@
 
                                     <tr>
                                         <td>ID</td>
-                                        <td>{{$timetable->id}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>День недели</td>
-                                        <td>{{$timetable->weekdayTitle}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ч/З</td>
-                                        <td>{{$timetable->numeratorTitle}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Номер пары</td>
-                                        <td>{{$timetable->lesson_number}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Группа</td>
-                                        <td>{{$group->name}}</td>
+                                        <td>{{$task->id}}</td>
                                     </tr>
                                     <tr>
                                         <td>Предмет</td>
                                         <td>{{$lesson->name}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Преподаватель</td>
-                                        <td>{{$user->last_name .' '. $user->first_name}}</td>
+                                        <td>Группа</td>
+                                        <td>{{$group->name}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Аудитория</td>
-                                        <td>{{$classroom->number}}</td>
+                                        <td>Статус задачи</td>
+                                        <td>{{$task->completedTitle}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Дата и время занятия</td>
+                                        <td>{{ \Carbon\Carbon::parse($task->date_time)->format('d.m.Y H:i') }}</td>
                                     </tr>
 
                                 </tbody>

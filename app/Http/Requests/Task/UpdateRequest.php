@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
         return [
             'completed' => 'required|integer',
             'lesson_id' => 'required|integer',
-            'date_time' => 'required|dataTime',
+            'date_time' => 'required|date_format:d.m.Y H:i'
         ];
     }
 }

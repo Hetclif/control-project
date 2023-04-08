@@ -66,7 +66,7 @@
                                         @endforeach
 
                                         <td>{{$task->completedTitle}}</td>
-                                        <td>{{$task->date_time}}</td>
+                                        <td>{{ \Carbon\Carbon::parse($task->date_time)->format('d.m.Y H:i') }}</td>
 
                                     </tr>
                                 @endforeach

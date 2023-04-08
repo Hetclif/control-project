@@ -7,6 +7,8 @@
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('adminlte/plugins/select2/css/select2.min.css')}}">
     <!-- Font Awesome -->
@@ -15,8 +17,7 @@
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="{{asset('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -130,7 +131,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        <a href="{{route('main.index')}}" class="brand-link">
             <span class="brand-text font-weight-light">Контроль посещаемости</span>
         </a>
 
@@ -234,20 +235,32 @@
 <script src="{{asset('adminlte/plugins/select2/js/select2.full.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- InputMask -->
+<script src="{{asset('adminlte/plugins/moment/moment.min.js')}}"></script>-->
+<!-- Moment.js with Russian locale -->
+<script src="{{asset('adminlte/plugins/moment/moment-with-locale.js')}}"></script>
+<script src="{{asset('adminlte/plugins/moment/locale/ru.js')}}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{asset('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{ asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="{{asset('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+
 
 <script>
     $('.users').select2()
 </script>
+
 <script>
     $(function () {
-        $('.datetimepicker').datetimepicker();
-    });
+        //Date and time picker
+        $('.task').datetimepicker({
+            icons: {time: 'far fa-clock'},
+            locale: 'ru',
+            format: 'DD.MM.YYYY HH:mm'
+        });
+    })
 </script>
 </body>
 </html>

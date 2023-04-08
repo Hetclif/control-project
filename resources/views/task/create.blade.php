@@ -23,13 +23,13 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <form action="{{route('task.store')}}" method="post">
                         @csrf
 
                         <div class="form-group">
                             <select name="completed" class="custom-select form-control" id="exampleSelectBorder">
-                                <option disabled selected>День недели</option>
+                                <option disabled selected>Статус задачи</option>
                                 <option {{old('completed') == 1 ? 'selected' : ''}} value="1">В процессе</option>
                                 <option {{old('completed') == 2 ? 'selected' : ''}} value="2">Выполнена</option>
                                 <option {{old('completed') == 3 ? 'selected' : ''}} value="3">Просрочена</option>
@@ -59,11 +59,9 @@
                             </select>
                         </div>
 
-                        <!-- Date and time -->
                         <div class="form-group">
-                            <label>Date and time:</label>
-                            <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker" data-target="#reservationdatetime"/>
+                            <div class="input-group date task" id="reservationdatetime" data-target-input="nearest">
+                                <input type="text" name="date_time" class="form-control" data-target="#reservationdatetime" placeholder="Дата и время занятия"/>
                                 <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                 </div>
