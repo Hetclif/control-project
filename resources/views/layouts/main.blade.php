@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Контроль посещаемости | Админка</title>
 
+    {{date_default_timezone_set('Europe/Moscow')}}
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Tempusdominus Bootstrap 4 -->
@@ -212,7 +214,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong><a href="{{route('main.index')}}">Контроль посещаемости</a></strong>
+        <strong><a href="{{route('main.index')}}">Контроль посещаемости </a></strong>
     </footer>
 
     <!-- Control Sidebar -->
