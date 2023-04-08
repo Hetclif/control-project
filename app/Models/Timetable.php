@@ -17,6 +17,11 @@ class Timetable extends Model
     const WEEK_FRI = 5;
     const WEEK_SAT = 6;
 
+    const LESSON_1 = 1;
+    const LESSON_2 = 2;
+    const LESSON_3 = 3;
+    const LESSON_4 = 4;
+
     protected $table = 'timetables';
     protected $guarded = false;
 
@@ -44,5 +49,18 @@ class Timetable extends Model
 
     public function getWeekdayTitleAttribute(){
         return self::getWeekday()[$this->weekday];
+    }
+
+    static function getLesson(){
+        return [
+            self::LESSON_1 => '1 пара',
+            self::LESSON_2 => '2 пара',
+            self::LESSON_3 => '3 пара',
+            self::LESSON_4 => '4 пара',
+        ];
+    }
+
+    public function getLessonTitleAttribute(){
+        return self::getLesson()[$this->lesson_number];
     }
 }

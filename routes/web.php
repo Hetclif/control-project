@@ -64,3 +64,13 @@ Route::group(['prefix' => 'timetable'], function (){
     Route::patch('/{timetable}',\App\Http\Controllers\Timetable\UpdateController::class)->name('timetable.update');
     Route::delete('/{timetable}',\App\Http\Controllers\Timetable\DeleteController::class)->name('timetable.delete');
 });
+
+Route::group(['prefix' => 'task'], function (){
+    Route::get('/',\App\Http\Controllers\Task\IndexController::class)->name('task.index');
+    Route::get('/create',\App\Http\Controllers\Task\CreateController::class)->name('task.create');
+    Route::post('/',\App\Http\Controllers\Task\StoreController::class)->name('task.store');
+    Route::get('/{task}/edit',\App\Http\Controllers\Task\EditController::class)->name('task.edit');
+    Route::get('/{task}',\App\Http\Controllers\Task\ShowController::class)->name('task.show');
+    Route::patch('/{task}',\App\Http\Controllers\Task\UpdateController::class)->name('task.update');
+    Route::delete('/{task}',\App\Http\Controllers\Task\DeleteController::class)->name('task.delete');
+});
