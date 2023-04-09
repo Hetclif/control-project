@@ -27,12 +27,14 @@ class FirstLesson extends Command
      */
     public function handle()
     {
-        $curDate = date("Y-m-d H:i:s", strtotime("+3 hours"));
+        $curDate = date('Y-m-d 09:30:00');
         $currentWeek = date('W');
         $numerator = ($currentWeek % 2 == 0) ? 1 : 2;
 
-        $timetables = Timetable::where('weekday', 1)->
-            where('numerator', $numerator)->where('lesson_number', 1)->get();
+        $timetables = Timetable::where('weekday', date('N'))
+            ->where('numerator', $numerator)
+            ->where('lesson_number', 1)
+            ->get();
 
         $tasks = [];
 
