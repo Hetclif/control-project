@@ -20,7 +20,7 @@ class FirstLesson extends Command
      *
      * @var string
      */
-    protected $description = 'Tasks added';
+    protected $description = 'Tasks added for 1 lesson';
 
     /**
      * Execute the console command.
@@ -31,7 +31,7 @@ class FirstLesson extends Command
         $currentWeek = date('W');
         $numerator = ($currentWeek % 2 == 0) ? 1 : 2;
 
-        $timetables = Timetable::where('weekday', date('N'))->
+        $timetables = Timetable::where('weekday', 1)->
             where('numerator', $numerator)->where('lesson_number', 1)->get();
 
         $tasks = [];
