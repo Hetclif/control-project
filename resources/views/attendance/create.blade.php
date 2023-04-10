@@ -30,18 +30,39 @@
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                 <tr>
-                                    <th>ID группы</th>
+                                    <th>ID задачи</th>
                                     <th>Название группы</th>
+                                    <th>Занятие</th>
+                                    <th>Дата</th>
                                 </tr>
                                 </thead>
                                 <tbody>
 
-                                    @foreach($groups as $group)
-                                        <tr>
-                                            <td>{{$group->id}}</td>
-                                            <td><a href="{{route('attendance_group.create', $group->id)}}">
-                                                    {{$group->name}}</a></td>
-                                        </tr>
+                                    @foreach($tasks as $task)
+                                        @if($task->completed == 1)
+                                            <tr>
+                                                <td><a href="{{route('attendance_group.create', $task->id)}}">
+                                                        {{$task->id}}</a></td>
+
+                                                @foreach($timetables as  $timetable)
+                                                    @if($task->lesson_id == $timetable->id)
+                                                        @foreach($groups as $group)
+                                                            @if($group->id == $timetable->group_id)
+                                                                <td>{{$group->name}}</td>
+                                                            @endif
+                                                        @endforeach
+                                                        @foreach($lessons as $lesson)
+                                                            @if($lesson->id == $timetable->lesson_id)
+                                                                <td>{{$lesson->name}}</td>
+                                                            @endif
+                                                        @endforeach
+
+                                                        <td>{{\Carbon\Carbon::parse($task->date_time)
+                                                            ->format('d.m.Y H:i')}}</td>
+                                                    @endif
+                                                @endforeach
+                                            </tr>
+                                        @endif
                                     @endforeach
 
                                 </tbody>

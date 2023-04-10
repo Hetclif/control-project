@@ -22,25 +22,40 @@
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-            <form action="{{route('attendance.store')}}" method="post">
+            <form action="{{route('attendance.update', $task->id)}}" method="post">
                 @csrf
-                <div class="row">
-                    <div class="col-12">
+                @method('patch')
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                    <tr>
+                        <th>Студент</th>
+                        <th>Присутствие</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
+                    @foreach($currAttendance as $attendance)
+                        <tr>
+                            @foreach($students as $student)
+                                @if($attendance->student_id == $student->id)
+                                    <td>{{$student->last_name .' '. $student->first_name}}</td>
+                                @endif
+                            @endforeach
 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
+                            <td>
+                                <div class="form-group">
+                                    <input type="hidden" name="id" value="{{ $attendance->id }}">
+                                    <input type="text" name="is_attendance" value="{{$attendance->is_attendance}}" class="form-control" placeholder="Присутствие">
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
 
+                    </tbody>
+                </table>
 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-
-
-                    </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Добавить">
                 </div>
             </form>
 
