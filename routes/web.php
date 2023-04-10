@@ -82,6 +82,6 @@ Route::group(['prefix' => 'attendance'], function (){
     Route::post('/',\App\Http\Controllers\Attendance\StoreController::class)->name('attendance.store');
     Route::get('/{attendance}/edit',\App\Http\Controllers\Attendance\EditController::class)->name('attendance.edit');
     Route::get('/{attendance}',\App\Http\Controllers\Attendance\ShowController::class)->name('attendance.show');
-    Route::patch('/{task}/update',\App\Http\Controllers\Attendance\UpdateController::class)->name('attendance.update');
+    Route::patch('/{task}',\App\Http\Controllers\Attendance\UpdateController::class)->name('attendance.update');
     Route::delete('/{attendance}',\App\Http\Controllers\Attendance\DeleteController::class)->name('attendance.delete');
 });

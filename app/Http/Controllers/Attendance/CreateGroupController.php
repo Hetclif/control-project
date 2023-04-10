@@ -44,10 +44,6 @@ class CreateGroupController extends Controller
         {
             $currAttendance = Attendance::where('task_id', $task->id)->get();
 
-            $studentsAsString = implode(',', $students->pluck('id')->toArray());
-
-            dd($studentsAsString);
-
             return view('attendance.create_group',
                 compact('currAttendance', 'students', 'task'));
         }

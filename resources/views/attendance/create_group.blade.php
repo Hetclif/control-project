@@ -45,7 +45,15 @@
                             <td>
                                 <div class="form-group">
                                     <input type="hidden" name="id" value="{{ $attendance->id }}">
-                                    <input type="text" name="is_attendance" value="{{$attendance->is_attendance}}" class="form-control" placeholder="Присутствие">
+                                    <div class="form-group clearfix">
+                                        <div class="icheck-success d-inline">
+                                            <input name="is_attendance" type="checkbox" id="{{ $attendance->id }}"
+                                                {{$attendance->is_attendance ? 'checked' : ''}}
+                                                value="$attendance->is_attendance">
+                                            <label for="{{ $attendance->id }}">
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
