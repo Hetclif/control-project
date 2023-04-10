@@ -41,7 +41,7 @@
                                     @foreach($groups as $group)
                                         <tr>
                                             <td>{{$group->id}}</td>
-                                            <td><a href="{{route('attendance.show', $group->id)}}">
+                                            <td><a href="{{route('attendance_group.index', $group->id)}}">
                                                     {{$group->name}}</a></td>
                                         </tr>
                                     @endforeach

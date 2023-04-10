@@ -27,14 +27,14 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>150</h3>
+                            <h3>{{$taskCount}}</h3>
 
                             <p>Текущие задачи</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Подпобнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{route('task.index')}}" class="small-box-footer">Подпобнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -42,14 +42,14 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>53<sup style="font-size: 20px">%</sup></h3>
+                            <h3>{{$attendancePercentage}}<sup style="font-size: 20px">%</sup></h3>
 
                             <p>Посещаемость</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Подпобнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{route('attendance.index')}}" class="small-box-footer">Подпобнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -57,14 +57,14 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>{{$userCount}}</h3>
 
                             <p>Пользователи</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Подпобнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{route('user.index')}}" class="small-box-footer">Подпобнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -72,14 +72,14 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>{{ $taskOverdueCount }}</h3>
 
-                            <p>Расписание</p>
+                            <p>Просроченные задачи</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Подпобнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{route('timetable.index')}}" class="small-box-footer">Подпобнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

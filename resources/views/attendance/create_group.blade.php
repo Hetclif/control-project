@@ -34,7 +34,7 @@
                     </thead>
                     <tbody>
 
-                    @foreach($currAttendance as $attendance)
+                    @foreach($currAttendance as $index => $attendance)
                         <tr>
                             @foreach($students as $student)
                                 @if($attendance->student_id == $student->id)
@@ -44,12 +44,13 @@
 
                             <td>
                                 <div class="form-group">
-                                    <input type="hidden" name="id" value="{{ $attendance->id }}">
+                                    <input type="hidden" name="attendance[{{$index}}][id]" value="{{ $attendance->id }}">
+                                    <input type="hidden" name="attendance[{{$index}}][is_attendance]" value="0">
                                     <div class="form-group clearfix">
                                         <div class="icheck-success d-inline">
-                                            <input name="is_attendance" type="checkbox" id="{{ $attendance->id }}"
-                                                {{$attendance->is_attendance ? 'checked' : ''}}
-                                                value="$attendance->is_attendance">
+                                            <input name="attendance[{{$index}}][is_attendance]" type="checkbox" id="{{ $attendance->id }}"
+                                                   {{$attendance->is_attendance ? 'checked' : ''}}
+                                                   value="1">
                                             <label for="{{ $attendance->id }}">
                                             </label>
                                         </div>
