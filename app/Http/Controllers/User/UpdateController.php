@@ -17,6 +17,11 @@ class UpdateController extends Controller
 
         $group = Group::find($user->group_id);
 
+        if(!$group)
+        {
+            $group = new Group(['name' => ' ']);
+        }
+
         return view('user.show', compact('user', 'group'));
     }
 }

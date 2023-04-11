@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
         return [
             'name' => 'required|string',
             'year' => 'required|integer',
-            'head_id' => 'required',
+            'head_id' => 'integer',
         ];
     }
 }

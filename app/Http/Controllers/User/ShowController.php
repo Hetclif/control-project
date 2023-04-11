@@ -12,6 +12,12 @@ class ShowController extends Controller
     public function __invoke(User $user)
     {
         $group = Group::find($user->group_id);
+
+        if(!$group)
+        {
+            $group = new Group(['name' => ' ']);
+        }
+
         return view('user.show', compact('user','group'));
     }
 }
